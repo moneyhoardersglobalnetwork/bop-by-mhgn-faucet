@@ -20,11 +20,12 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   */
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
+  const _tokenAddress = "0xC556Cf22AB6d65D7f0Be0355e80A54Ef9E23F7Bb"; //BOP token Polygon
 
-  await deploy("YourContract", {
+  await deploy("BopFaucetContract2", {
     from: deployer,
     // Contract constructor arguments
-    args: [deployer],
+    args: [_tokenAddress],
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
